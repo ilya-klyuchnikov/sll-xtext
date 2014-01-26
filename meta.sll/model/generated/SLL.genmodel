@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/meta.sll/src-gen" editDirectory="/meta.sll.edit/src"
+    editorDirectory="/meta.sll.editor/src" modelPluginID="meta.sll" forceOverwrite="true"
+    modelName="SLL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="meta.sll.edit" editorPluginID="meta.sll.editor"
+    runtimeVersion="2.9">
+  <genPackages prefix="Sll" basePackage="meta.sll" disposableProviderFactory="true"
+      fileExtensions="sll" ecorePackage="SLL.ecore#/">
+    <genClasses ecoreClass="SLL.ecore#//Program">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SLL.ecore#//Program/defs"/>
+    </genClasses>
+    <genClasses ecoreClass="SLL.ecore#//Definition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SLL.ecore#//Definition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SLL.ecore#//Definition/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SLL.ecore#//Definition/body"/>
+    </genClasses>
+    <genClasses ecoreClass="SLL.ecore#//FDefinition"/>
+    <genClasses ecoreClass="SLL.ecore#//GDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SLL.ecore#//GDefinition/pattern"/>
+    </genClasses>
+    <genClasses ecoreClass="SLL.ecore#//Pattern">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SLL.ecore#//Pattern/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SLL.ecore#//Pattern/args"/>
+    </genClasses>
+    <genClasses ecoreClass="SLL.ecore#//Expression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SLL.ecore#//Expression/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SLL.ecore#//FCall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SLL.ecore#//FCall/args"/>
+    </genClasses>
+    <genClasses ecoreClass="SLL.ecore#//GCall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SLL.ecore#//GCall/args"/>
+    </genClasses>
+    <genClasses ecoreClass="SLL.ecore#//Ctr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SLL.ecore#//Ctr/args"/>
+    </genClasses>
+    <genClasses ecoreClass="SLL.ecore#//Var"/>
+  </genPackages>
+</genmodel:GenModel>
