@@ -1,0 +1,51 @@
+grammar meta.sll.SLL with org.eclipse.xtext.common.Terminals
+
+generate sll "http://www.sll.meta/SLL"
+
+Program:
+    defs+=Definition*;
+
+Definition:
+    FDefinition | GDefinition
+;
+
+FDefinition:
+    name=FID '(' (params+=LID (',' params+=LID)*)? ')' '=' body=Expression ';'
+;
+
+GDefinition:
+    name=GID '(' (pattern=Pattern (',' params+=LID)*)? ')' '=' body=Expression ';'
+;
+
+Pattern:
+    name=UID '(' (args+=LID (',' args+=LID)*)? ')'
+;
+
+Expression:
+    FCall | GCall | Ctr | Var
+;
+
+FCall:
+    name=FID '(' (args+=Expression (',' args+=Expression)*)? ')'
+;
+
+GCall:
+    name=GID '(' (args+=Expression (',' args+=Expression)*)? ')'
+;
+
+Ctr:
+    name=UID '(' (args+=Expression (',' args+=Expression)*)? ')'
+;
+
+Var:
+    name=LID
+;
+
+// f-function id
+terminal FID        : 'f' ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+// g-function id
+terminal GID        : 'g' ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+// lower-case id
+terminal LID        : ('a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+// upper-case id
+terminal UID        : ('A'..'Z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
